@@ -1,0 +1,1445 @@
+<!-- 
+═══════════════════════════════════════════════════════════════════════════════
+LINUX TUTORIAL - SUB-TOPIC PAGE TEMPLATE
+═══════════════════════════════════════════════════════════════════════════════
+
+CURRENT PAGE: Introduction to Linux > What is Linux?
+TOPIC ID: intro-what-is-linux
+PAGE NUMBER: 1 of 62
+
+═══════════════════════════════════════════════════════════════════════════════
+INSTRUCTIONS FOR GENERATING NEW PAGES (FOR AI):
+═══════════════════════════════════════════════════════════════════════════════
+
+STEP 1: Update these 6 values using Find & Replace:
+   ┌─────────────────────────────────────────────────────────────────────────┐
+   │ FIND                     → REPLACE WITH                                 │
+   ├─────────────────────────────────────────────────────────────────────────┤
+   │ intro-what-is-linux      → New topic ID (e.g., "intro-history")        │
+   │ What is Linux?           → New sub-topic title                          │
+   │ 🧠                       → New emoji (if different)                     │
+   │ data-main-topic="1"      → New main topic number (1-14)                 │
+   └─────────────────────────────────────────────────────────────────────────┘
+
+STEP 2: Update prev/next navigation URLs at the BOTTOM of the page
+
+STEP 3: Paste new content between the markers:
+   - Look for: "PASTE NEW SUBTOPIC CONTENT BELOW THIS LINE"
+   - Delete example content from marker to "END OF CONTENT"
+   - Paste your AI-generated subtopic content there
+   
+STEP 4: Paste into Elementor Custom HTML Widget
+
+═══════════════════════════════════════════════════════════════════════════════
+-->
+
+<!-- ╔═══════════════════════════════════════════════════════════════╗
+     ║  CHANGE THESE 3 VALUES (Lines below):                        ║
+     ║  1. data-site-total="62"                                     ║
+     ║  2. data-current-topic="intro-what-is-linux"                 ║
+     ║  3. data-main-topic="1"                                      ║
+     ╚═══════════════════════════════════════════════════════════════╝ -->
+
+<div id="linux-tutorial-wrapper" data-site-total="62" data-current-topic="intro-what-is-linux" data-main-topic="1">
+    <style>
+        /* ═══════════════════════════════════════════════════════════════
+           ELEMENTOR RESET & BASE STYLES
+           ═══════════════════════════════════════════════════════════════ */
+        
+        #linux-tutorial-wrapper {
+            all: initial;
+            display: block;
+            width: 100%;
+            max-width: 100%;
+            overflow-x: hidden;
+        }
+
+        #linux-tutorial-wrapper * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        #linux-tutorial-wrapper .linux-tutorial {
+            background: #0d0d0d;
+            color: #e0e0e0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            min-height: 100vh;
+            transition: all 0.3s ease;
+        }
+
+        #linux-tutorial-wrapper .linux-tutorial.light-theme {
+            background: #f5f5f5;
+            color: #1a1a1a;
+        }
+
+        /* ═══════════════════════════════════════════════════════════════
+           PROGRESS BAR (TOP)
+           ═══════════════════════════════════════════════════════════════ */
+
+        #linux-tutorial-wrapper .progress-container {
+            position: sticky;
+            top: 0;
+            z-index: 999;
+            background: linear-gradient(90deg, #071515, #0d0d0d);
+            padding: 12px 20px;
+            border-bottom: 2px solid #00ffff;
+            box-shadow: 0 2px 10px rgba(0, 255, 255, 0.3);
+        }
+
+        #linux-tutorial-wrapper .light-theme .progress-container {
+            background: linear-gradient(90deg, #e0f7fa, #f5f5f5);
+            border-bottom-color: #0088cc;
+            box-shadow: 0 2px 10px rgba(0, 136, 204, 0.2);
+        }
+
+        #linux-tutorial-wrapper .progress-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-bottom: 10px;
+        }
+
+        #linux-tutorial-wrapper .progress-text {
+            color: #39ff14;
+            font-weight: 700;
+            font-size: 1em;
+        }
+
+        #linux-tutorial-wrapper .light-theme .progress-text {
+            color: #00aa00;
+        }
+
+        #linux-tutorial-wrapper .progress-actions {
+            display: flex;
+            gap: 8px;
+        }
+
+        #linux-tutorial-wrapper .progress-btn {
+            background: rgba(0, 255, 255, 0.1);
+            border: 1px solid #00ffff;
+            color: #00ffff;
+            padding: 6px 12px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.85em;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        #linux-tutorial-wrapper .light-theme .progress-btn {
+            border-color: #0088cc;
+            color: #0088cc;
+            background: rgba(0, 136, 204, 0.1);
+        }
+
+        #linux-tutorial-wrapper .progress-btn:hover {
+            background: rgba(0, 255, 255, 0.2);
+            transform: translateY(-1px);
+        }
+
+        #linux-tutorial-wrapper .progress-bar-wrapper {
+            width: 100%;
+            height: 10px;
+            background: #112;
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid rgba(0, 255, 255, 0.3);
+        }
+
+        #linux-tutorial-wrapper .progress-bar-fill {
+            height: 100%;
+            width: 0%;
+            background: linear-gradient(90deg, #39ff14, #00ffff);
+            transition: width 0.5s ease;
+            box-shadow: 0 0 10px rgba(57, 255, 20, 0.5);
+        }
+
+        /* ═══════════════════════════════════════════════════════════════
+           LAYOUT (SIDEBAR + CONTENT)
+           ═══════════════════════════════════════════════════════════════ */
+
+        #linux-tutorial-wrapper .layout {
+            display: flex;
+            gap: 0;
+            min-height: calc(100vh - 100px);
+        }
+
+        /* ═══════════════════════════════════════════════════════════════
+           SIDEBAR (DESKTOP)
+           ═══════════════════════════════════════════════════════════════ */
+
+        #linux-tutorial-wrapper .sidebar {
+            width: 280px;
+            background: #0a0a0a;
+            border-right: 2px solid #00ffff;
+            overflow-y: auto;
+            position: sticky;
+            top: 100px;
+            height: calc(100vh - 100px);
+            padding: 20px 0;
+        }
+
+        #linux-tutorial-wrapper .light-theme .sidebar {
+            background: #ffffff;
+            border-right-color: #0088cc;
+        }
+
+        #linux-tutorial-wrapper .sidebar-title {
+            color: #39ff14;
+            font-size: 1.3em;
+            font-weight: 700;
+            padding: 0 20px 15px;
+            border-bottom: 2px solid #00ffff;
+            margin-bottom: 15px;
+        }
+
+        #linux-tutorial-wrapper .light-theme .sidebar-title {
+            color: #00aa00;
+            border-bottom-color: #0088cc;
+        }
+
+        #linux-tutorial-wrapper .main-topic-item {
+            margin-bottom: 10px;
+        }
+
+        #linux-tutorial-wrapper .main-topic-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 20px;
+            cursor: pointer;
+            background: rgba(0, 255, 255, 0.05);
+            border-left: 3px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        #linux-tutorial-wrapper .main-topic-header:hover {
+            background: rgba(0, 255, 255, 0.1);
+            border-left-color: #00ffff;
+        }
+
+        #linux-tutorial-wrapper .main-topic-header.active {
+            background: rgba(0, 255, 255, 0.15);
+            border-left-color: #39ff14;
+        }
+
+        #linux-tutorial-wrapper .main-topic-title {
+            color: #00ffff;
+            font-weight: 600;
+            font-size: 0.95em;
+        }
+
+        #linux-tutorial-wrapper .light-theme .main-topic-title {
+            color: #0088cc;
+        }
+
+        #linux-tutorial-wrapper .main-topic-caret {
+            color: #00ffff;
+            font-size: 0.8em;
+            transition: transform 0.3s ease;
+        }
+
+        #linux-tutorial-wrapper .main-topic-header.expanded .main-topic-caret {
+            transform: rotate(90deg);
+        }
+
+        #linux-tutorial-wrapper .subtopic-list {
+            display: none;
+            padding: 8px 0 8px 15px;
+            background: rgba(0, 0, 0, 0.2);
+        }
+
+        #linux-tutorial-wrapper .subtopic-list.show {
+            display: block;
+        }
+
+        #linux-tutorial-wrapper .subtopic-link {
+            display: block;
+            padding: 8px 20px;
+            color: #e0e0e0;
+            text-decoration: none;
+            font-size: 0.9em;
+            border-left: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        #linux-tutorial-wrapper .light-theme .subtopic-link {
+            color: #333;
+        }
+
+        #linux-tutorial-wrapper .subtopic-link:hover {
+            background: rgba(0, 255, 255, 0.1);
+            border-left-color: #00ffff;
+            padding-left: 25px;
+        }
+
+        #linux-tutorial-wrapper .subtopic-link.active {
+            background: rgba(57, 255, 20, 0.1);
+            border-left-color: #39ff14;
+            color: #39ff14;
+            font-weight: 600;
+        }
+
+        #linux-tutorial-wrapper .subtopic-link.completed::before {
+            content: '✓ ';
+            color: #39ff14;
+            font-weight: 700;
+        }
+
+        /* ═══════════════════════════════════════════════════════════════
+           MOBILE HAMBURGER MENU
+           ═══════════════════════════════════════════════════════════════ */
+
+        #linux-tutorial-wrapper .hamburger {
+            display: none;
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 1001;
+            background: #00ffff;
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0, 255, 255, 0.5);
+            transition: all 0.3s ease;
+        }
+
+        #linux-tutorial-wrapper .hamburger:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(0, 255, 255, 0.7);
+        }
+
+        #linux-tutorial-wrapper .hamburger-icon {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #linux-tutorial-wrapper .hamburger-icon span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background: #0d0d0d;
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+
+        #linux-tutorial-wrapper .hamburger.active .hamburger-icon span:nth-child(1) {
+            transform: rotate(45deg) translate(7px, 7px);
+        }
+
+        #linux-tutorial-wrapper .hamburger.active .hamburger-icon span:nth-child(2) {
+            opacity: 0;
+        }
+
+        #linux-tutorial-wrapper .hamburger.active .hamburger-icon span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -7px);
+        }
+
+        @media (max-width: 980px) {
+            #linux-tutorial-wrapper .hamburger {
+                display: block;
+            }
+
+            #linux-tutorial-wrapper .sidebar {
+                position: fixed;
+                top: 0;
+                left: -280px;
+                height: 100vh;
+                z-index: 1000;
+                transition: left 0.3s ease;
+                border-right: none;
+                box-shadow: 5px 0 15px rgba(0, 0, 0, 0.5);
+            }
+
+            #linux-tutorial-wrapper .sidebar.show {
+                left: 0;
+            }
+
+            #linux-tutorial-wrapper .layout {
+                flex-direction: column;
+            }
+        }
+
+        /* ═══════════════════════════════════════════════════════════════
+           MAIN CONTENT AREA
+           ═══════════════════════════════════════════════════════════════ */
+
+        #linux-tutorial-wrapper .content {
+            flex: 1;
+            padding: 40px;
+            max-width: 1000px;
+        }
+
+        @media (max-width: 768px) {
+            #linux-tutorial-wrapper .content {
+                padding: 20px;
+            }
+        }
+
+        #linux-tutorial-wrapper .content-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #00ffff;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        #linux-tutorial-wrapper .light-theme .content-header {
+            border-bottom-color: #0088cc;
+        }
+
+        #linux-tutorial-wrapper .page-title {
+            font-size: clamp(1.5em, 5vw, 2.2em);
+            color: #39ff14;
+            text-shadow: 0 0 10px rgba(57, 255, 20, 0.5);
+            font-weight: 700;
+        }
+
+        #linux-tutorial-wrapper .light-theme .page-title {
+            color: #00aa00;
+            text-shadow: none;
+        }
+
+        #linux-tutorial-wrapper .theme-toggle {
+            background: linear-gradient(135deg, #39ff14, #00ffff);
+            border: none;
+            padding: 10px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 700;
+            color: #0d0d0d;
+            transition: all 0.3s ease;
+            font-size: 14px;
+        }
+
+        #linux-tutorial-wrapper .theme-toggle:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(57, 255, 20, 0.6);
+        }
+
+        /* ═══════════════════════════════════════════════════════════════
+           CONTENT SECTIONS (REUSE FROM ORIGINAL)
+           ═══════════════════════════════════════════════════════════════ */
+
+        #linux-tutorial-wrapper .intro {
+            background: rgba(57, 255, 20, 0.05);
+            border-left: 4px solid #39ff14;
+            padding: 20px;
+            margin-bottom: 30px;
+            border-radius: 8px;
+            line-height: 1.8;
+            font-size: 1.1em;
+        }
+
+        #linux-tutorial-wrapper .light-theme .intro {
+            background: rgba(0, 170, 0, 0.1);
+            border-left-color: #00aa00;
+        }
+
+        #linux-tutorial-wrapper .section {
+            margin-bottom: 40px;
+        }
+
+        #linux-tutorial-wrapper .section-title {
+            color: #00ffff;
+            font-size: clamp(1em, 3vw, 1.5em);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            line-height: 1.4;
+        }
+
+        #linux-tutorial-wrapper .light-theme .section-title {
+            color: #0088cc;
+        }
+
+        #linux-tutorial-wrapper .section-title::before {
+            content: '🔹';
+            font-size: 0.8em;
+            flex-shrink: 0;
+        }
+
+        #linux-tutorial-wrapper .command-box {
+            background: #1a1a1a;
+            border: 2px solid #39ff14;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 20px 0;
+            position: relative;
+            box-shadow: 0 0 15px rgba(57, 255, 20, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        #linux-tutorial-wrapper .light-theme .command-box {
+            background: #ffffff;
+            border-color: #00aa00;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        #linux-tutorial-wrapper .command-box:hover {
+            box-shadow: 0 0 25px rgba(57, 255, 20, 0.4);
+            transform: translateY(-2px);
+        }
+
+        #linux-tutorial-wrapper .command-text {
+            font-family: 'Courier New', monospace;
+            color: #39ff14;
+            font-size: 1.2em;
+            word-break: break-word;
+            padding-right: 80px;
+            line-height: 1.5;
+        }
+
+        #linux-tutorial-wrapper .light-theme .command-text {
+            color: #00aa00;
+        }
+
+        #linux-tutorial-wrapper .copy-btn {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: #00ffff;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            color: #0d0d0d;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            font-size: 12px;
+            min-height: 36px;
+            z-index: 10;
+        }
+
+        #linux-tutorial-wrapper .copy-btn:hover {
+            background: #39ff14;
+            transform: scale(1.05);
+        }
+
+        #linux-tutorial-wrapper .copy-btn.copied {
+            background: #39ff14;
+        }
+
+        #linux-tutorial-wrapper .example-box {
+            background: rgba(0, 255, 255, 0.05);
+            border-left: 3px solid #00ffff;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 6px;
+            font-family: 'Courier New', monospace;
+        }
+
+        #linux-tutorial-wrapper .light-theme .example-box {
+            background: rgba(0, 136, 204, 0.1);
+            border-left-color: #0088cc;
+        }
+
+        #linux-tutorial-wrapper .example-label {
+            color: #00ffff;
+            font-weight: 700;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        #linux-tutorial-wrapper .light-theme .example-label {
+            color: #0088cc;
+        }
+
+        #linux-tutorial-wrapper .output-text {
+            color: #e0e0e0;
+            line-height: 1.6;
+            word-break: break-word;
+        }
+
+        #linux-tutorial-wrapper .light-theme .output-text {
+            color: #333;
+        }
+
+        #linux-tutorial-wrapper .explanation {
+            line-height: 1.8;
+            margin: 15px 0;
+            word-wrap: break-word;
+        }
+
+        #linux-tutorial-wrapper .decode-list {
+            margin: 15px 0;
+            padding-left: 20px;
+            list-style: none;
+        }
+
+        #linux-tutorial-wrapper .decode-list li {
+            margin: 8px 0;
+            line-height: 1.6;
+            position: relative;
+            padding-left: 10px;
+        }
+
+        #linux-tutorial-wrapper .code-inline {
+            background: rgba(57, 255, 20, 0.1);
+            color: #39ff14;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            word-break: break-word;
+        }
+
+        #linux-tutorial-wrapper .light-theme .code-inline {
+            background: rgba(0, 170, 0, 0.1);
+            color: #00aa00;
+        }
+
+        #linux-tutorial-wrapper .analogy-box {
+            background: linear-gradient(135deg, rgba(57, 255, 20, 0.1), rgba(0, 255, 255, 0.1));
+            border: 2px solid #00ffff;
+            border-radius: 12px;
+            padding: 25px;
+            margin-top: 30px;
+            position: relative;
+        }
+
+        #linux-tutorial-wrapper .light-theme .analogy-box {
+            background: linear-gradient(135deg, rgba(0, 170, 0, 0.1), rgba(0, 136, 204, 0.1));
+            border-color: #0088cc;
+        }
+
+        #linux-tutorial-wrapper .analogy-box::before {
+            content: '💡';
+            font-size: 2em;
+            position: absolute;
+            top: -15px;
+            left: 20px;
+            background: #0d0d0d;
+            padding: 0 10px;
+        }
+
+        #linux-tutorial-wrapper .light-theme .analogy-box::before {
+            background: #f5f5f5;
+        }
+
+        #linux-tutorial-wrapper .analogy-title {
+            color: #00ffff;
+            font-weight: 700;
+            font-size: 1.2em;
+            margin-bottom: 15px;
+        }
+
+        #linux-tutorial-wrapper .light-theme .analogy-title {
+            color: #0088cc;
+        }
+
+        #linux-tutorial-wrapper .table-wrapper {
+            width: 100%;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            margin: 20px 0;
+            border-radius: 8px;
+            border: 2px solid #00ffff;
+        }
+
+        #linux-tutorial-wrapper .light-theme .table-wrapper {
+            border-color: #0088cc;
+        }
+
+        #linux-tutorial-wrapper .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 0;
+            border: none;
+        }
+
+        #linux-tutorial-wrapper .comparison-table th {
+            background: #0a4d4d !important;
+            color: #00ffff;
+            padding: 15px;
+            text-align: left;
+            font-weight: 700;
+            border: 1px solid #00ffff;
+        }
+
+        #linux-tutorial-wrapper .light-theme .comparison-table th {
+            background: #d4f1f9 !important;
+            color: #0088cc;
+            border: 1px solid #0088cc;
+        }
+
+        #linux-tutorial-wrapper .comparison-table td {
+            padding: 12px 15px;
+            color: #e0e0e0;
+            background: #0a4d4d !important;
+            border: 1px solid #00ffff;
+            word-wrap: break-word;
+        }
+
+        #linux-tutorial-wrapper .light-theme .comparison-table td {
+            color: #333;
+            background: #d4f1f9 !important;
+            border: 1px solid #0088cc;
+        }
+
+        /* ═══════════════════════════════════════════════════════════════
+           NAVIGATION BUTTONS (PREV/NEXT)
+           ═══════════════════════════════════════════════════════════════ */
+
+        #linux-tutorial-wrapper .page-navigation {
+            display: flex;
+            justify-content: space-between;
+            gap: 15px;
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 2px solid #00ffff;
+        }
+
+        #linux-tutorial-wrapper .light-theme .page-navigation {
+            border-top-color: #0088cc;
+        }
+
+        #linux-tutorial-wrapper .nav-link {
+            flex: 1;
+            padding: 15px 25px;
+            background: rgba(0, 255, 255, 0.1);
+            border: 2px solid #00ffff;
+            border-radius: 12px;
+            text-decoration: none;
+            color: #00ffff;
+            font-weight: 700;
+            text-align: center;
+            transition: all 0.3s ease;
+            display: block;
+        }
+
+        #linux-tutorial-wrapper .light-theme .nav-link {
+            background: rgba(0, 136, 204, 0.1);
+            border-color: #0088cc;
+            color: #0088cc;
+        }
+
+        #linux-tutorial-wrapper .nav-link:hover {
+            background: rgba(0, 255, 255, 0.2);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0, 255, 255, 0.3);
+        }
+
+        #linux-tutorial-wrapper .nav-link.disabled {
+            opacity: 0.3;
+            cursor: not-allowed;
+            pointer-events: none;
+        }
+
+        #linux-tutorial-wrapper .mark-done-btn {
+            display: block;
+            width: 100%;
+            max-width: 400px;
+            margin: 40px auto;
+            padding: 15px 30px;
+            background: linear-gradient(135deg, #39ff14, #00ffff);
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: 700;
+            color: #0d0d0d;
+            font-size: 1.1em;
+            transition: all 0.3s ease;
+        }
+
+        #linux-tutorial-wrapper .mark-done-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 30px rgba(57, 255, 20, 0.6);
+        }
+
+        #linux-tutorial-wrapper .mark-done-btn.completed {
+            background: linear-gradient(135deg, #00ff00, #00aa00);
+        }
+
+        #linux-tutorial-wrapper .mark-done-btn.completed::before {
+            content: '✓ ';
+        }
+
+        /* ═══════════════════════════════════════════════════════════════
+           MOBILE RESPONSIVENESS
+           ═══════════════════════════════════════════════════════════════ */
+
+        @media (max-width: 768px) {
+            #linux-tutorial-wrapper .progress-container {
+                padding: 10px 15px;
+            }
+
+            #linux-tutorial-wrapper .progress-text {
+                font-size: 0.9em;
+            }
+
+            #linux-tutorial-wrapper .progress-btn {
+                font-size: 0.75em;
+                padding: 5px 10px;
+            }
+
+            #linux-tutorial-wrapper .command-text {
+                font-size: 1em;
+                padding-right: 70px;
+            }
+
+            #linux-tutorial-wrapper .command-box {
+                padding: 15px;
+            }
+
+            #linux-tutorial-wrapper .copy-btn {
+                padding: 10px 16px;
+                font-size: 11px;
+                min-height: 40px;
+            }
+
+            #linux-tutorial-wrapper .page-navigation {
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 380px) {
+            #linux-tutorial-wrapper .command-box {
+                padding-bottom: 55px;
+            }
+
+            #linux-tutorial-wrapper .copy-btn {
+                position: static;
+                display: block;
+                width: 100%;
+                margin-top: 10px;
+            }
+
+            #linux-tutorial-wrapper .command-text {
+                padding-right: 0;
+            }
+        }
+    </style>
+
+    <div class="linux-tutorial" id="tutorial">
+        <!-- ═══════════════════════════════════════════════════════════════
+             PROGRESS TRACKER (SAME ON ALL PAGES)
+             ═══════════════════════════════════════════════════════════════ -->
+        <div class="progress-container">
+            <div class="progress-header">
+                <div class="progress-text" id="progress-text">Progress: 0/62 (0%)</div>
+                <div class="progress-actions">
+                    <button class="progress-btn" id="export-btn">📤 Export</button>
+                    <button class="progress-btn" id="import-btn">📥 Import</button>
+                </div>
+            </div>
+            <div class="progress-bar-wrapper">
+                <div class="progress-bar-fill" id="progress-bar"></div>
+            </div>
+        </div>
+
+        <!-- ═══════════════════════════════════════════════════════════════
+             HAMBURGER MENU (MOBILE ONLY)
+             ═══════════════════════════════════════════════════════════════ -->
+        <button class="hamburger" id="hamburger">
+            <div class="hamburger-icon">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </button>
+
+        <div class="layout">
+            <!-- ═══════════════════════════════════════════════════════════════
+                 SIDEBAR NAVIGATION (SAME ON ALL PAGES - DO NOT MODIFY)
+                 ═══════════════════════════════════════════════════════════════ -->
+            <nav class="sidebar" id="sidebar">
+                <h3 class="sidebar-title">📚 Linux Tutorial</h3>
+
+                <!-- Main Topic 1: Introduction to Linux -->
+                <div class="main-topic-item">
+                    <div class="main-topic-header" data-topic="1">
+                        <span class="main-topic-title">🧩 1. Introduction to Linux</span>
+                        <span class="main-topic-caret">▸</span>
+                    </div>
+                    <div class="subtopic-list" id="subtopics-1">
+                        <a href="https://deepcyber-x86.io/learn/linux/introduction-to-linux/what-is-linux/" class="subtopic-link" data-topic-id="intro-what-is-linux">What is Linux?</a>
+                        <a href="https://deepcyber-x86.io/learn/linux/introduction-to-linux/history-of-linux-open-source/" class="subtopic-link" data-topic-id="intro-history">History of Linux & Open Source</a>
+                        <a href="https://deepcyber-x86.io/learn/linux/introduction-to-linux/linux-distributions/" class="subtopic-link" data-topic-id="intro-distributions">Linux Distributions</a>
+                        <a href="https://deepcyber-x86.io/learn/linux/introduction-to-linux/linux-vs-windows-vs-macos/" class="subtopic-link" data-topic-id="intro-vs-others">Linux vs Windows vs macOS</a>
+                        <a href="https://deepcyber-x86.io/learn/linux/introduction-to-linux/linux-file-system-hierarchy-overview/" class="subtopic-link" data-topic-id="intro-filesystem">File System Hierarchy Overview</a>
+                    </div>
+                </div>
+
+                <!-- Main Topic 2: Getting Started -->
+                <div class="main-topic-item">
+                    <div class="main-topic-header" data-topic="2">
+                        <span class="main-topic-title">💻 2. Getting Started with Linux</span>
+                        <span class="main-topic-caret">▸</span>
+                    </div>
+                    <div class="subtopic-list" id="subtopics-2">
+                        <a href="https://deepcyber-x86.io/learn/linux/getting-started-with-linux/installing-linux/" class="subtopic-link" data-topic-id="getting-installing">Installing Linux</a>
+                        <a href="https://deepcyber-x86.io/learn/linux/getting-started-with-linux/understanding-the-linux-desktop-environment/" class="subtopic-link" data-topic-id="getting-desktop">Desktop Environment</a>
+                        <a href="https://deepcyber-x86.io/learn/linux/getting-started-with-linux/navigating-the-linux-terminal/" class="subtopic-link" data-topic-id="getting-terminal">Navigating the Terminal</a>
+                        <a href="https://deepcyber-x86.io/learn/linux/getting-started-with-linux/basic-linux-commands/" class="subtopic-link" data-topic-id="getting-basic-commands">Basic Commands</a>
+                        <a href="https://deepcyber-x86.io/learn/linux/getting-started-with-linux/file-types-and-extensions/" class="subtopic-link" data-topic-id="getting-file-types">File Types</a>
+                    </div>
+                </div>
+
+                <!-- Main Topic 3: Working with Files -->
+                <div class="main-topic-item">
+                    <div class="main-topic-header" data-topic="3">
+                        <span class="main-topic-title">📁 3. Files and Directories</span>
+                        <span class="main-topic-caret">▸</span>
+                    </div>
+                    <div class="subtopic-list" id="subtopics-3">
+                        <a href="https://deepcyber-x86.io/learn/linux/working-with-files-and-directories/listing-and-viewing-files/" class="subtopic-link" data-topic-id="files-listing">Listing and Viewing Files</a>
+                        <a href="https://deepcyber-x86.io/learn/linux/working-with-files-and-directories/creating-copying-moving-deleting/" class="subtopic-link" data-topic-id="files-creating">Creating, Copying, Moving</a>
+                        <a href="https://deepcyber-x86.io/learn/linux/working-with-files-and-directories/file-permissions-and-ownership/" class="subtopic-link" data-topic-id="files-permissions">File Permissions</a>
+                        <a href="https://deepcyber-x86.io/learn/linux/working-with-files-and-directories/searching-for-files/" class="subtopic-link" data-topic-id="files-searching">Searching for Files</a>
+                        <a href="https://deepcyber-x86.io/learn/linux/working-with-files-and-directories/viewing-and-editing-text-files/" class="subtopic-link" data-topic-id="files-editing">Editing Text Files</a>
+                    </div>
+                </div>
+
+                <!-- Main Topic 4: System Navigation -->
+                <div class="main-topic-item">
+                    <div class="main-topic-header" data-topic="4">
+                        <span class="main-topic-title">⚙️ 4. System Navigation</span>
+                        <span class="main-topic-caret">▸</span>
+                    </div>
+                    <div class="subtopic-list" id="subtopics-4">
+                        <a href="https://deepcyber-x86.io/learn/linux/system-navigation-and-management/understanding-the-file-system-structure/" class="subtopic-link" data-topic-id="system-structure">File System Structure</a>
+                        <a href="https://deepcyber-x86.io/learn/linux/system-navigation-and-management/checking-disk-usage-df-du/" class="subtopic-link" data-topic-id="system-disk-usage">Disk Usage</a>
+                        <a href="https://deepcyber-x86.io/learn/linux/system-navigation-and-management/mounting-and-unmounting-drives/" class="subtopic-link" data-topic-id="system-mounting">Mounting Drives</a>
+                        <a href="https://deepcyber-x86.io/learn/linux/system-navigation-and-management/viewing-system-information/" class="subtopic-link" data-topic-id="system-info">System Information</a>
+                        <a href="https://deepcyber-x86.io/learn/linux/system-navigation-and-management/checking-date-time-and-calendar/" class="subtopic-link" data-topic-id="system-datetime">Date & Time</a>
+                    </div>
+                </div>
+
+                <!-- Main Topic 5: User Management -->
+                <div class="main-topic-item">
+                    <div class="main-topic-header" data-topic="5">
+                        <span class="main-topic-title">👥 5. User & Group Management</span>
+                        <span class="main-topic-caret">▸</span>
+                    </div>
+                    <div class="subtopic-list" id="subtopics-5">
+                        <a href="https://deepcyber-x86.io/learn/linux/user-and-group-management/creating-and-deleting-users/" class="subtopic-link" data-topic-id="users-creating">Creating Users</a>
+                        <a href="https://deepcyber-x86.io/learn/linux/user-and-group-management/adding-users-to-groups/" class="subtopic-link" data-topic-id="users-groups">Adding to Groups</a>
+                        <a href="https://deepcyber-x86.io/learn/linux/user-and-group-management/switching-users/" class="subtopic-link" data-topic-id="users-switching">Switching Users</a>
+                        <a href="https://deepcyber-x86.io/learn/linux/user-and-group-management/managing-passwords/" class="subtopic-link" data-topic-id="users-passwords">Managing Passwords</a>
+                        <a href="https://deepcyber-x86.io/learn/linux/user-and-group-management/understanding-etc-passwd-and-etc-group/" class="subtopic-link" data-topic-id="users-files">Understanding /etc/passwd</a>
+                    </div>
+                </div>
+
+                <!-- Main Topic 6: Permissions -->
+                <div class="main-topic-item">
+                    <div class="main-topic-header" data-topic="6">
+                        <span class="main-topic-title">🔒 6. Permissions & Security</span>
+                        <span class="main-topic-caret">▸</span>
+                    </div>
+                    <div class="subtopic-list" id="subtopics-6">
+                        <a href="https://deepcyber-x86.io/learn/linux/permissions-and-security/understanding-file-permissions-rwx/" class="subtopic-link" data-topic-id="perms-understanding">Understanding Permissions</a>
+                        <a href="https://deepcyber-x86.io/learn/linux/permissions-and-security/changing-file-permissions-chmod/" class="subtopic-link" data-topic-id="perms-chmod">Changing Permissions</a>
+                        <a href="https://deepcyber-x86.io/learn/linux/permissions-and-security/changing-ownership-chown/" class="subtopic-link" data-topic-id="perms-chown">Changing Ownership</a>
+                        <a href="https://deepcyber-x86.io/learn/linux/permissions-and-security/sudo-for-administrative-tasks/" class="subtopic-link" data-topic-id="perms-sudo">Using sudo</a>
+                        <a href="https://deepcyber-x86.io/learn/linux/permissions-and-security/managing-access-control-lists-acls/" class="subtopic-link" data-topic-id="perms-acl">Access Control Lists</a>
+                    </div>
+                </div>
+
+                <!-- Main Topic 7: Package Management -->
+                <div class="main-topic-item">
+                    <div class="main-topic-header" data-topic="7">
+                        <span class="main-topic-title">📦 7. Package Management</span>
+                        <span class="main-topic-caret">▸</span>
+                    </div>
+                    <div class="subtopic-list" id="subtopics-7">
+                        <a href="https://deepcyber-x86.io/learn/linux/package-management/what-are-packages-and-repositories/" class="subtopic-link" data-topic-id="packages-intro">Packages & Repositories</a>
+                        <a href="https://deepcyber-x86.io/learn/linux/package-management/installing-and-removing-packages/" class="subtopic-link" data-topic-id="packages-installing">Installing & Removing</a>
+                        <a href="https://deepcyber-x86.io/learn/linux/package-management/updating-the-system/" class="subtopic-link" data-topic-id="packages-updating">Updating System</a>
+                        <a href="https://deepcyber-x86.io/learn/linux/package-management/searching-for-packages/" class="subtopic-link" data-topic-id="packages-searching">Searching Packages</a>
+                    </div>
+                </div>
+
+                <!-- Main Topic 8: Process Management -->
+                <div class="main-topic-item">
+                    <div class="main-topic-header" data-topic="8">
+                        <span class="main-topic-title">🧠 8. Process Management</span>
+                        <span class="main-topic-caret">▸</span>
+                    </div>
+                    <div class="subtopic-list" id="subtopics-8">
+                        <a href="https://deepcyber-x86.io/learn/linux/process-management/viewing-running-processes/" class="subtopic-link" data-topic-id="process-viewing">Viewing Processes</a>
+                        <a href="https://deepcyber-x86.io/learn/linux/process-management/killing-or-stopping-processes/" class="subtopic-link" data-topic-id="process-killing">Killing Processes</a>
+                        <a href="https://deepcyber-x86.io/learn/linux/process-management/managing-background-foreground-jobs/" class="subtopic-link" data-topic-id="process-jobs">Background Jobs</a>
+                        <a href="https://deepcyber-x86.io/learn/linux/process-management/scheduling-tasks/" class="subtopic-link" data-topic-id="process-scheduling">Scheduling Tasks</a>
+                    </div>
+                </div>
+
+                <!-- Main Topic 9: Networking Basics -->
+                <div class="main-topic-item">
+                    <div class="main-topic-header" data-topic="9">
+                        <span class="main-topic-title">🌐 9. Networking Basics</span>
+                        <span class="main-topic-caret">▸</span>
+                    </div>
+                    <div class="subtopic-list" id="subtopics-9">
+                        <a href="https://deepcyber-x86.io/learn/linux/networking-basics/checking-ip-address/" class="subtopic-link" data-topic-id="network-ip">Checking IP Address</a>
+                        <a href="https://deepcyber-x86.io/learn/linux/networking-basics/testing-connectivity/" class="subtopic-link" data-topic-id="network-connectivity">Testing Connectivity</a>
+                        <a href="https://deepcyber-x86.io/learn/linux/networking-basics/downloading-files/" class="subtopic-link" data-topic-id="network-downloading">Downloading Files</a>
+                        <a href="https://deepcyber-x86.io/learn/linux/networking-basics/viewing-network-statistics/" class="subtopic-link" data-topic-id="network-stats">Network Statistics</a>
+                        <a href="https://deepcyber-x86.io/learn/linux/networking-basics/editing-network-configuration-files/" class="subtopic-link" data-topic-id="network-config">Network Configuration</a>
+                    </div>
+                </div>
+
+                <!-- Main Topic 10: System Monitoring -->
+                <div class="main-topic-item">
+                    <div class="main-topic-header" data-topic="10">
+                        <span class="main-topic-title">🧰 10. System Monitoring</span>
+                        <span class="main-topic-caret">▸</span>
+                    </div>
+                    <div class="subtopic-list" id="subtopics-10">
+                        <a href="https://deepcyber-x86.io/learn/linux/system-monitoring-and-logs/checking-system-performance/" class="subtopic-link" data-topic-id="monitor-performance">System Performance</a>
+                        <a href="https://deepcyber-x86.io/learn/linux/system-monitoring-and-logs/viewing-logs/" class="subtopic-link" data-topic-id="monitor-logs">Viewing Logs</a>
+                        <a href="https://deepcyber-x86.io/learn/linux/system-monitoring-and-logs/monitoring-disk-i-o-and-memory-usage/" class="subtopic-link" data-topic-id="monitor-disk-io">Disk I/O</a>
+                        <a href="https://deepcyber-x86.io/learn/linux/system-monitoring-and-logs/checking-running-services/" class="subtopic-link" data-topic-id="monitor-services">Running Services</a>
+                    </div>
+                </div>
+
+                <!-- Main Topic 11: Services & Systemd -->
+                <div class="main-topic-item">
+                    <div class="main-topic-header" data-topic="11">
+                        <span class="main-topic-title">🪟 11. Services & Systemd</span>
+                        <span class="main-topic-caret">▸</span>
+                    </div>
+                    <div class="subtopic-list" id="subtopics-11">
+                        <a href="https://deepcyber-x86.io/learn/linux/services-and-systemd/understanding-systemd-and-init/" class="subtopic-link" data-topic-id="systemd-intro">Understanding Systemd</a>
+                        <a href="https://deepcyber-x86.io/learn/linux/services-and-systemd/starting-stopping-services/" class="subtopic-link" data-topic-id="systemd-starting">Starting/Stopping Services</a>
+                        <a href="https://deepcyber-x86.io/learn/linux/services-and-systemd/enabling-disabling-services-on-boot/" class="subtopic-link" data-topic-id="systemd-enabling">Enabling on Boot</a>
+                        <a href="https://deepcyber-x86.io/learn/linux/services-and-systemd/viewing-service-status-and-logs/" class="subtopic-link" data-topic-id="systemd-status">Service Status</a>
+                    </div>
+                </div>
+
+                <!-- Main Topic 12: Compression -->
+                <div class="main-topic-item">
+                    <div class="main-topic-header" data-topic="12">
+                        <span class="main-topic-title">🧱 12. File Compression</span>
+                        <span class="main-topic-caret">▸</span>
+                    </div>
+                    <div class="subtopic-list" id="subtopics-12">
+                        <a href="https://deepcyber-x86.io/learn/linux/file-compression-and-archiving/compressing-and-decompressing-files/" class="subtopic-link" data-topic-id="compress-gzip">Compressing Files</a>
+                        <a href="https://deepcyber-x86.io/learn/linux/file-compression-and-archiving/creating-archives/" class="subtopic-link" data-topic-id="compress-tar">Creating Archives</a>
+                    </div>
+                </div>
+
+                <!-- Main Topic 13: Remote Access -->
+                <div class="main-topic-item">
+                    <div class="main-topic-header" data-topic="13">
+                        <span class="main-topic-title">🔗 13. Remote Access</span>
+                        <span class="main-topic-caret">▸</span>
+                    </div>
+                    <div class="subtopic-list" id="subtopics-13">
+                        <a href="https://deepcyber-x86.io/learn/linux/networking-remote-access/using-ssh/" class="subtopic-link" data-topic-id="remote-ssh">Using SSH</a>
+                        <a href="https://deepcyber-x86.io/learn/linux/networking-remote-access/setting-up-ssh-keys/" class="subtopic-link" data-topic-id="remote-keys">SSH Keys</a>
+                        <a href="https://deepcyber-x86.io/learn/linux/networking-remote-access/transferring-files-between-systems/" class="subtopic-link" data-topic-id="remote-transfer">Transferring Files</a>
+                        <a href="https://deepcyber-x86.io/learn/linux/networking-remote-access/remote-login-and-command-execution/" class="subtopic-link" data-topic-id="remote-login">Remote Login</a>
+                    </div>
+                </div>
+
+                <!-- Main Topic 14: Advanced Topics -->
+                <div class="main-topic-item">
+                    <div class="main-topic-header" data-topic="14">
+                        <span class="main-topic-title">🏁 14. Advanced Topics</span>
+                        <span class="main-topic-caret">▸</span>
+                    </div>
+                    <div class="subtopic-list" id="subtopics-14">
+                        <a href="https://deepcyber-x86.io/learn/linux/advanced-beginner-topics/environment-variables/" class="subtopic-link" data-topic-id="advanced-env">Environment Variables</a>
+                        <a href="https://deepcyber-x86.io/learn/linux/advanced-beginner-topics/aliases-and-custom-commands/" class="subtopic-link" data-topic-id="advanced-aliases">Aliases</a>
+                        <a href="https://deepcyber-x86.io/learn/linux/advanced-beginner-topics/bash-configuration-files/" class="subtopic-link" data-topic-id="advanced-bashrc">Bash Configuration</a>
+                        <a href="https://deepcyber-x86.io/learn/linux/advanced-beginner-topics/understanding-file-descriptors-and-streams/" class="subtopic-link" data-topic-id="advanced-streams">File Descriptors</a>
+                        <a href="https://deepcyber-x86.io/learn/linux/advanced-beginner-topics/basic-firewall-setup/" class="subtopic-link" data-topic-id="advanced-firewall">Firewall Setup</a>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- ═══════════════════════════════════════════════════════════════
+                 MAIN CONTENT (CHANGE THIS SECTION FOR EACH PAGE)
+                 ═══════════════════════════════════════════════════════════════ -->
+            <main class="content">
+                <!-- ╔═══════════════════════════════════════════════════════════╗
+                     ║  CHANGE THESE 2 VALUES BELOW:                            ║
+                     ║  1. Page title (🧠 What is Linux?)                       ║
+                     ║  2. Button data-topic-id (at bottom before navigation)   ║
+                     ╚═══════════════════════════════════════════════════════════╝ -->
+                <div class="content-header">
+                    <h1 class="page-title">🧠 What is Linux?</h1>
+                    <button class="theme-toggle" id="theme-toggle">🌓 Toggle Theme</button>
+                </div>
+
+                <!-- ╔═══════════════════════════════════════════════════════════╗
+                     ║  PASTE NEW SUBTOPIC CONTENT BELOW THIS LINE              ║
+                     ║  Delete everything from here to "END OF CONTENT" marker  ║
+                     ╚═══════════════════════════════════════════════════════════╝ -->
+
+                <!-- INTRO BOX (required) -->
+                <div class="intro">
+                    <strong>Linux</strong><br><br>
+                    Linux is an operating system (OS) — just like Windows or macOS — but it's free, open-source, and super customizable. It controls your computer's hardware (CPU, memory, disk, keyboard, etc.) and provides an interface (called the kernel) for your apps to use those resources safely.
+                </div>
+
+                <!-- SECTION 1 -->
+                <div class="section">
+                    <h3 class="section-title">Key Components of Linux</h3>
+                    <ul class="decode-list">
+                        <li><span class="code-inline">Kernel</span> → the brain of Linux that directly talks to hardware.</li>
+                        <li><span class="code-inline">Shell</span> → the interface that lets users communicate with the system (e.g., Terminal).</li>
+                        <li><span class="code-inline">File System</span> → organizes all data and files.</li>
+                        <li><span class="code-inline">Utilities</span> → small tools (like <span class="code-inline">ls</span>, <span class="code-inline">cd</span>, <span class="code-inline">cp</span>) that perform basic tasks.</li>
+                        <li><span class="code-inline">Applications</span> → software built on top of Linux (like browsers, text editors, etc.).</li>
+                    </ul>
+                </div>
+
+                <!-- SECTION 2 -->
+                <div class="section">
+                    <h3 class="section-title">Why People Love Linux</h3>
+                    <ul class="decode-list">
+                        <li><span class="code-inline">✅ Free and Open Source</span> — you can modify or share it.</li>
+                        <li><span class="code-inline">🔒 Secure</span> — viruses are rare.</li>
+                        <li><span class="code-inline">⚡ Fast and lightweight</span> — great even on old PCs.</li>
+                        <li><span class="code-inline">🧠 Developer-friendly</span> — perfect for coding, networking, and cybersecurity.</li>
+                        <li><span class="code-inline">🧩 Flexible</span> — used in everything from Android phones to supercomputers.</li>
+                    </ul>
+                </div>
+
+                <!-- SECTION 3 -->
+                <div class="section">
+                    <h3 class="section-title">Fun Fact</h3>
+                    <p class="explanation">96% of the world's top 1 million web servers run on Linux — including Google, Facebook, and Amazon servers.</p>
+                </div>
+
+                <!-- ANALOGY BOX (required at end) -->
+                <div class="analogy-box">
+                    <h4 class="analogy-title">Real-life analogy</h4>
+                    <p class="explanation">
+                        Think of your computer as a restaurant:<br>
+                        <strong>Hardware</strong> = the kitchen, stove, fridge, etc.<br>
+                        <strong>Operating System (Linux)</strong> = the head chef who manages everything — decides what gets cooked, who uses the oven, and how ingredients are used.<br>
+                        <strong>Applications</strong> = the waiters who bring the food (results) to you.<br><br>
+                        Without the chef (OS), the kitchen (hardware) would just sit there doing nothing.
+                    </p>
+                </div>
+
+                <!-- ╔═══════════════════════════════════════════════════════════╗
+                     ║  CHANGE data-topic-id BELOW to match current topic       ║
+                     ╚═══════════════════════════════════════════════════════════╝ -->
+                <!-- MARK AS DONE BUTTON (required) -->
+                <button class="mark-done-btn" id="mark-done-btn" data-topic-id="intro-what-is-linux">
+                    Mark as Finished
+                </button>
+
+                <!-- ╔═══════════════════════════════════════════════════════════╗
+                     ║  UPDATE PREV/NEXT URLs BELOW                             ║
+                     ╚═══════════════════════════════════════════════════════════╝ -->
+                <!-- PREV/NEXT NAVIGATION -->
+                <div class="page-navigation">
+                    <a href="#" class="nav-link disabled">← Previous</a>
+                    <a href="https://deepcyber-x86.io/learn/linux/introduction-to-linux/history-of-linux-open-source/" class="nav-link">Next: History of Linux →</a>
+                </div>
+
+                <!-- ╔═══════════════════════════════════════════════════════════╗
+                     ║  END OF CONTENT - DO NOT PASTE BELOW THIS LINE           ║
+                     ╚═══════════════════════════════════════════════════════════╝ -->
+
+            </main>
+        </div>
+    </div>
+
+    <script>
+        (function() {
+            'use strict';
+
+            // ═══════════════════════════════════════════════════════════════
+            // CONFIGURATION (DO NOT MODIFY)
+            // ═══════════════════════════════════════════════════════════════
+            
+            const STORAGE_KEY = 'lt_completed_topics';
+            const THEME_KEY = 'lt_theme';
+            const wrapper = document.getElementById('linux-tutorial-wrapper');
+            const siteTotal = parseInt(wrapper.getAttribute('data-site-total'), 10) || 62;
+            const currentTopicId = wrapper.getAttribute('data-current-topic');
+            const currentMainTopic = parseInt(wrapper.getAttribute('data-main-topic'), 10);
+
+            // ═══════════════════════════════════════════════════════════════
+            // PROGRESS TRACKING
+            // ═══════════════════════════════════════════════════════════════
+
+            function getCompletedTopics() {
+                try {
+                    return JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
+                } catch (e) {
+                    return [];
+                }
+            }
+
+            function saveCompletedTopics(topics) {
+                localStorage.setItem(STORAGE_KEY, JSON.stringify(topics));
+            }
+
+            function updateProgressUI() {
+                const completed = getCompletedTopics();
+                const count = completed.length;
+                const percent = Math.round((count / siteTotal) * 100);
+
+                // Update progress bar
+                const progressText = document.getElementById('progress-text');
+                const progressBar = document.getElementById('progress-bar');
+                
+                if (progressText) {
+                    progressText.textContent = `Progress: ${count}/${siteTotal} (${percent}%)`;
+                }
+                
+                if (progressBar) {
+                    progressBar.style.width = percent + '%';
+                }
+
+                // Update sidebar links
+                document.querySelectorAll('.subtopic-link').forEach(link => {
+                    const topicId = link.getAttribute('data-topic-id');
+                    if (completed.includes(topicId)) {
+                        link.classList.add('completed');
+                    } else {
+                        link.classList.remove('completed');
+                    }
+
+                    // Highlight current page
+                    if (topicId === currentTopicId) {
+                        link.classList.add('active');
+                    }
+                });
+
+                // Update mark as done button
+                const markBtn = document.getElementById('mark-done-btn');
+                if (markBtn) {
+                    const topicId = markBtn.getAttribute('data-topic-id');
+                    if (completed.includes(topicId)) {
+                        markBtn.classList.add('completed');
+                        markBtn.textContent = '✓ Completed';
+                    } else {
+                        markBtn.classList.remove('completed');
+                        markBtn.textContent = 'Mark as Finished';
+                    }
+                }
+            }
+
+            function toggleTopicCompletion(topicId) {
+                const completed = getCompletedTopics();
+                const index = completed.indexOf(topicId);
+                
+                if (index === -1) {
+                    completed.push(topicId);
+                } else {
+                    completed.splice(index, 1);
+                }
+                
+                saveCompletedTopics(completed);
+                updateProgressUI();
+            }
+
+            // ═══════════════════════════════════════════════════════════════
+            // EXPORT/IMPORT PROGRESS
+            // ═══════════════════════════════════════════════════════════════
+
+            function exportProgress() {
+                const data = {
+                    completed: getCompletedTopics(),
+                    total: siteTotal,
+                    date: new Date().toISOString()
+                };
+                
+                const encoded = btoa(JSON.stringify(data));
+                
+                // Try clipboard first
+                if (navigator.clipboard) {
+                    navigator.clipboard.writeText(encoded).then(() => {
+                        alert('✅ Progress copied to clipboard!\n\nSave this code to restore your progress later.');
+                    }).catch(() => {
+                        prompt('📋 Copy this backup code:', encoded);
+                    });
+                } else {
+                    prompt('📋 Copy this backup code:', encoded);
+                }
+            }
+
+            function importProgress() {
+                const encoded = prompt('📥 Paste your backup code:');
+                if (!encoded) return;
+                
+                try {
+                    const data = JSON.parse(atob(encoded));
+                    if (data && Array.isArray(data.completed)) {
+                        saveCompletedTopics(data.completed);
+                        updateProgressUI();
+                        alert('✅ Progress restored successfully!');
+                    } else {
+                        alert('❌ Invalid backup code format.');
+                    }
+                } catch (e) {
+                    alert('❌ Failed to import. Please check the code and try again.');
+                }
+            }
+
+            // ═══════════════════════════════════════════════════════════════
+            // SIDEBAR NAVIGATION
+            // ═══════════════════════════════════════════════════════════════
+
+            function toggleMainTopic(topicNum) {
+                const header = document.querySelector(`.main-topic-header[data-topic="${topicNum}"]`);
+                const list = document.getElementById(`subtopics-${topicNum}`);
+                
+                if (header && list) {
+                    const isExpanded = list.classList.contains('show');
+                    
+                    // Collapse all others (optional - remove if you want multiple open)
+                    // document.querySelectorAll('.subtopic-list').forEach(l => l.classList.remove('show'));
+                    // document.querySelectorAll('.main-topic-header').forEach(h => h.classList.remove('expanded'));
+                    
+                    if (isExpanded) {
+                        list.classList.remove('show');
+                        header.classList.remove('expanded');
+                    } else {
+                        list.classList.add('show');
+                        header.classList.add('expanded');
+                    }
+                }
+            }
+
+            // Auto-expand current main topic
+            if (currentMainTopic) {
+                const header = document.querySelector(`.main-topic-header[data-topic="${currentMainTopic}"]`);
+                const list = document.getElementById(`subtopics-${currentMainTopic}`);
+                if (header && list) {
+                    list.classList.add('show');
+                    header.classList.add('expanded');
+                    header.classList.add('active');
+                }
+            }
+
+            // ═══════════════════════════════════════════════════════════════
+            // HAMBURGER MENU (MOBILE)
+            // ═══════════════════════════════════════════════════════════════
+
+            function toggleMobileMenu() {
+                const sidebar = document.getElementById('sidebar');
+                const hamburger = document.getElementById('hamburger');
+                
+                sidebar.classList.toggle('show');
+                hamburger.classList.toggle('active');
+            }
+
+            // Close sidebar when clicking a link (mobile)
+            document.querySelectorAll('.subtopic-link').forEach(link => {
+                link.addEventListener('click', () => {
+                    if (window.innerWidth <= 980) {
+                        document.getElementById('sidebar').classList.remove('show');
+                        document.getElementById('hamburger').classList.remove('active');
+                    }
+                });
+            });
+
+            // ═══════════════════════════════════════════════════════════════
+            // THEME TOGGLE
+            // ═══════════════════════════════════════════════════════════════
+
+            function toggleTheme() {
+                const tutorial = document.getElementById('tutorial');
+                tutorial.classList.toggle('light-theme');
+                
+                const isLight = tutorial.classList.contains('light-theme');
+                localStorage.setItem(THEME_KEY, isLight ? 'light' : 'dark');
+            }
+
+            // Load saved theme
+            function loadTheme() {
+                const savedTheme = localStorage.getItem(THEME_KEY);
+                if (savedTheme === 'light') {
+                    document.getElementById('tutorial').classList.add('light-theme');
+                }
+            }
+
+            // ═══════════════════════════════════════════════════════════════
+            // COPY COMMAND FUNCTIONALITY
+            // ═══════════════════════════════════════════════════════════════
+
+            function copyCommand(button, command) {
+                navigator.clipboard.writeText(command).then(() => {
+                    const originalText = button.textContent;
+                    button.textContent = '✓ Copied!';
+                    button.classList.add('copied');
+                    
+                    setTimeout(() => {
+                        button.textContent = originalText;
+                        button.classList.remove('copied');
+                    }, 2000);
+                }).catch(() => {
+                    button.textContent = '✗ Failed';
+                    setTimeout(() => {
+                        button.textContent = 'Copy';
+                    }, 2000);
+                });
+            }
+
+            // ═══════════════════════════════════════════════════════════════
+            // EVENT LISTENERS
+            // ═══════════════════════════════════════════════════════════════
+
+            // Progress export/import
+            document.getElementById('export-btn').addEventListener('click', exportProgress);
+            document.getElementById('import-btn').addEventListener('click', importProgress);
+
+            // Theme toggle
+            document.getElementById('theme-toggle').addEventListener('click', toggleTheme);
+
+            // Hamburger menu
+            document.getElementById('hamburger').addEventListener('click', toggleMobileMenu);
+
+            // Main topic headers (sidebar)
+            document.querySelectorAll('.main-topic-header').forEach(header => {
+                header.addEventListener('click', function() {
+                    const topicNum = parseInt(this.getAttribute('data-topic'), 10);
+                    toggleMainTopic(topicNum);
+                });
+            });
+
+            // Mark as done button
+            const markBtn = document.getElementById('mark-done-btn');
+            if (markBtn) {
+                markBtn.addEventListener('click', function() {
+                    const topicId = this.getAttribute('data-topic-id');
+                    toggleTopicCompletion(topicId);
+                });
+            }
+
+            // ═══════════════════════════════════════════════════════════════
+            // INITIALIZATION
+            // ═══════════════════════════════════════════════════════════════
+
+            function init() {
+                loadTheme();
+                updateProgressUI();
+            }
+
+            // Run on DOM ready
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', init);
+            } else {
+                init();
+            }
+
+            // Expose functions for inline onclick handlers (if needed)
+            window.copyCommand = copyCommand;
+
+        })();
+    </script>
+</div>
