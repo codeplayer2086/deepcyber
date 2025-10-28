@@ -1,0 +1,522 @@
+# Create complete topic reference guide
+cat > topic_reference.md << 'EOF'
+# Linux Tutorial - Complete Topic Reference Guide (62 Pages)
+
+## How to Use This Guide
+1. Find your topic number
+2. Copy the `data-topic-id` for the Mark as Done button
+3. Copy the Previous/Next URLs for navigation
+4. Update the 3 values in your HTML template
+
+---
+
+## 📋 MAIN TOPIC 1: Introduction to Linux (5 pages)
+
+### Page 1: What is Linux?
+- **Topic ID**: `intro-what-is-linux`
+- **Page Title**: `🧠 What is Linux?`
+- **URL**: `/learn/linux/introduction-to-linux/what-is-linux/`
+- **Previous**: `#` (disabled)
+- **Next**: `/learn/linux/introduction-to-linux/history-of-linux-open-source/`
+
+### Page 2: History of Linux & Open Source
+- **Topic ID**: `intro-history`
+- **Page Title**: `📜 History of Linux & Open Source`
+- **URL**: `/learn/linux/introduction-to-linux/history-of-linux-open-source/`
+- **Previous**: `/learn/linux/introduction-to-linux/what-is-linux/`
+- **Next**: `/learn/linux/introduction-to-linux/linux-distributions/`
+
+### Page 3: Linux Distributions
+- **Topic ID**: `intro-distributions`
+- **Page Title**: `🎨 Linux Distributions`
+- **URL**: `/learn/linux/introduction-to-linux/linux-distributions/`
+- **Previous**: `/learn/linux/introduction-to-linux/history-of-linux-open-source/`
+- **Next**: `/learn/linux/introduction-to-linux/linux-vs-windows-vs-macos/`
+
+### Page 4: Linux vs Windows vs macOS
+- **Topic ID**: `intro-vs-others`
+- **Page Title**: `⚖️ Linux vs Windows vs macOS`
+- **URL**: `/learn/linux/introduction-to-linux/linux-vs-windows-vs-macos/`
+- **Previous**: `/learn/linux/introduction-to-linux/linux-distributions/`
+- **Next**: `/learn/linux/introduction-to-linux/linux-file-system-hierarchy-overview/`
+
+### Page 5: File System Hierarchy Overview
+- **Topic ID**: `intro-filesystem`
+- **Page Title**: `📂 File System Hierarchy Overview`
+- **URL**: `/learn/linux/introduction-to-linux/linux-file-system-hierarchy-overview/`
+- **Previous**: `/learn/linux/introduction-to-linux/linux-vs-windows-vs-macos/`
+- **Next**: `/learn/linux/getting-started-with-linux/installing-linux/`
+
+---
+
+## 💻 MAIN TOPIC 2: Getting Started with Linux (5 pages)
+
+### Page 6: Installing Linux
+- **Topic ID**: `getting-installing`
+- **Page Title**: `💿 Installing Linux`
+- **URL**: `/learn/linux/getting-started-with-linux/installing-linux/`
+- **Previous**: `/learn/linux/introduction-to-linux/linux-file-system-hierarchy-overview/`
+- **Next**: `/learn/linux/getting-started-with-linux/understanding-the-linux-desktop-environment/`
+
+### Page 7: Desktop Environment
+- **Topic ID**: `getting-desktop`
+- **Page Title**: `🖥️ Understanding the Linux Desktop Environment`
+- **URL**: `/learn/linux/getting-started-with-linux/understanding-the-linux-desktop-environment/`
+- **Previous**: `/learn/linux/getting-started-with-linux/installing-linux/`
+- **Next**: `/learn/linux/getting-started-with-linux/navigating-the-linux-terminal/`
+
+### Page 8: Navigating the Terminal
+- **Topic ID**: `getting-terminal`
+- **Page Title**: `⌨️ Navigating the Linux Terminal`
+- **URL**: `/learn/linux/getting-started-with-linux/navigating-the-linux-terminal/`
+- **Previous**: `/learn/linux/getting-started-with-linux/understanding-the-linux-desktop-environment/`
+- **Next**: `/learn/linux/getting-started-with-linux/basic-linux-commands/`
+
+### Page 9: Basic Commands
+- **Topic ID**: `getting-basic-commands`
+- **Page Title**: `📝 Basic Linux Commands`
+- **URL**: `/learn/linux/getting-started-with-linux/basic-linux-commands/`
+- **Previous**: `/learn/linux/getting-started-with-linux/navigating-the-linux-terminal/`
+- **Next**: `/learn/linux/getting-started-with-linux/file-types-and-extensions/`
+
+### Page 10: File Types
+- **Topic ID**: `getting-file-types`
+- **Page Title**: `📄 File Types and Extensions`
+- **URL**: `/learn/linux/getting-started-with-linux/file-types-and-extensions/`
+- **Previous**: `/learn/linux/getting-started-with-linux/basic-linux-commands/`
+- **Next**: `/learn/linux/working-with-files-and-directories/listing-and-viewing-files/`
+
+---
+
+## 📁 MAIN TOPIC 3: Files and Directories (5 pages)
+
+### Page 11: Listing and Viewing Files
+- **Topic ID**: `files-listing`
+- **Page Title**: `👁️ Listing and Viewing Files`
+- **URL**: `/learn/linux/working-with-files-and-directories/listing-and-viewing-files/`
+- **Previous**: `/learn/linux/getting-started-with-linux/file-types-and-extensions/`
+- **Next**: `/learn/linux/working-with-files-and-directories/creating-copying-moving-deleting/`
+
+### Page 12: Creating, Copying, Moving
+- **Topic ID**: `files-creating`
+- **Page Title**: `✂️ Creating, Copying, Moving, Deleting`
+- **URL**: `/learn/linux/working-with-files-and-directories/creating-copying-moving-deleting/`
+- **Previous**: `/learn/linux/working-with-files-and-directories/listing-and-viewing-files/`
+- **Next**: `/learn/linux/working-with-files-and-directories/file-permissions-and-ownership/`
+
+### Page 13: File Permissions
+- **Topic ID**: `files-permissions`
+- **Page Title**: `🔐 File Permissions and Ownership`
+- **URL**: `/learn/linux/working-with-files-and-directories/file-permissions-and-ownership/`
+- **Previous**: `/learn/linux/working-with-files-and-directories/creating-copying-moving-deleting/`
+- **Next**: `/learn/linux/working-with-files-and-directories/searching-for-files/`
+
+### Page 14: Searching for Files
+- **Topic ID**: `files-searching`
+- **Page Title**: `🔍 Searching for Files`
+- **URL**: `/learn/linux/working-with-files-and-directories/searching-for-files/`
+- **Previous**: `/learn/linux/working-with-files-and-directories/file-permissions-and-ownership/`
+- **Next**: `/learn/linux/working-with-files-and-directories/viewing-and-editing-text-files/`
+
+### Page 15: Editing Text Files
+- **Topic ID**: `files-editing`
+- **Page Title**: `📝 Viewing and Editing Text Files`
+- **URL**: `/learn/linux/working-with-files-and-directories/viewing-and-editing-text-files/`
+- **Previous**: `/learn/linux/working-with-files-and-directories/searching-for-files/`
+- **Next**: `/learn/linux/system-navigation-and-management/understanding-the-file-system-structure/`
+
+---
+
+## ⚙️ MAIN TOPIC 4: System Navigation (5 pages)
+
+### Page 16: File System Structure
+- **Topic ID**: `system-structure`
+- **Page Title**: `🗂️ Understanding the File System Structure`
+- **URL**: `/learn/linux/system-navigation-and-management/understanding-the-file-system-structure/`
+- **Previous**: `/learn/linux/working-with-files-and-directories/viewing-and-editing-text-files/`
+- **Next**: `/learn/linux/system-navigation-and-management/checking-disk-usage-df-du/`
+
+### Page 17: Disk Usage
+- **Topic ID**: `system-disk-usage`
+- **Page Title**: `💾 Checking Disk Usage (df, du)`
+- **URL**: `/learn/linux/system-navigation-and-management/checking-disk-usage-df-du/`
+- **Previous**: `/learn/linux/system-navigation-and-management/understanding-the-file-system-structure/`
+- **Next**: `/learn/linux/system-navigation-and-management/mounting-and-unmounting-drives/`
+
+### Page 18: Mounting Drives
+- **Topic ID**: `system-mounting`
+- **Page Title**: `🔗 Mounting and Unmounting Drives`
+- **URL**: `/learn/linux/system-navigation-and-management/mounting-and-unmounting-drives/`
+- **Previous**: `/learn/linux/system-navigation-and-management/checking-disk-usage-df-du/`
+- **Next**: `/learn/linux/system-navigation-and-management/viewing-system-information/`
+
+### Page 19: System Information
+- **Topic ID**: `system-info`
+- **Page Title**: `ℹ️ Viewing System Information`
+- **URL**: `/learn/linux/system-navigation-and-management/viewing-system-information/`
+- **Previous**: `/learn/linux/system-navigation-and-management/mounting-and-unmounting-drives/`
+- **Next**: `/learn/linux/system-navigation-and-management/checking-date-time-and-calendar/`
+
+### Page 20: Date & Time
+- **Topic ID**: `system-datetime`
+- **Page Title**: `🕐 Checking Date, Time, and Calendar`
+- **URL**: `/learn/linux/system-navigation-and-management/checking-date-time-and-calendar/`
+- **Previous**: `/learn/linux/system-navigation-and-management/viewing-system-information/`
+- **Next**: `/learn/linux/user-and-group-management/creating-and-deleting-users/`
+
+---
+
+## 👥 MAIN TOPIC 5: User & Group Management (5 pages)
+
+### Page 21: Creating Users
+- **Topic ID**: `users-creating`
+- **Page Title**: `👤 Creating and Deleting Users`
+- **URL**: `/learn/linux/user-and-group-management/creating-and-deleting-users/`
+- **Previous**: `/learn/linux/system-navigation-and-management/checking-date-time-and-calendar/`
+- **Next**: `/learn/linux/user-and-group-management/adding-users-to-groups/`
+
+### Page 22: Adding to Groups
+- **Topic ID**: `users-groups`
+- **Page Title**: `👥 Adding Users to Groups`
+- **URL**: `/learn/linux/user-and-group-management/adding-users-to-groups/`
+- **Previous**: `/learn/linux/user-and-group-management/creating-and-deleting-users/`
+- **Next**: `/learn/linux/user-and-group-management/switching-users/`
+
+### Page 23: Switching Users
+- **Topic ID**: `users-switching`
+- **Page Title**: `🔄 Switching Users (su, sudo)`
+- **URL**: `/learn/linux/user-and-group-management/switching-users/`
+- **Previous**: `/learn/linux/user-and-group-management/adding-users-to-groups/`
+- **Next**: `/learn/linux/user-and-group-management/managing-passwords/`
+
+### Page 24: Managing Passwords
+- **Topic ID**: `users-passwords`
+- **Page Title**: `🔑 Managing Passwords`
+- **URL**: `/learn/linux/user-and-group-management/managing-passwords/`
+- **Previous**: `/learn/linux/user-and-group-management/switching-users/`
+- **Next**: `/learn/linux/user-and-group-management/understanding-etc-passwd-and-etc-group/`
+
+### Page 25: Understanding /etc/passwd
+- **Topic ID**: `users-files`
+- **Page Title**: `📋 Understanding /etc/passwd and /etc/group`
+- **URL**: `/learn/linux/user-and-group-management/understanding-etc-passwd-and-etc-group/`
+- **Previous**: `/learn/linux/user-and-group-management/managing-passwords/`
+- **Next**: `/learn/linux/permissions-and-security/understanding-file-permissions-rwx/`
+
+---
+
+## 🔒 MAIN TOPIC 6: Permissions & Security (5 pages)
+
+### Page 26: Understanding Permissions
+- **Topic ID**: `perms-understanding`
+- **Page Title**: `🔐 Understanding File Permissions (rwx)`
+- **URL**: `/learn/linux/permissions-and-security/understanding-file-permissions-rwx/`
+- **Previous**: `/learn/linux/user-and-group-management/understanding-etc-passwd-and-etc-group/`
+- **Next**: `/learn/linux/permissions-and-security/changing-file-permissions-chmod/`
+
+### Page 27: Changing Permissions
+- **Topic ID**: `perms-chmod`
+- **Page Title**: `⚙️ Changing File Permissions (chmod)`
+- **URL**: `/learn/linux/permissions-and-security/changing-file-permissions-chmod/`
+- **Previous**: `/learn/linux/permissions-and-security/understanding-file-permissions-rwx/`
+- **Next**: `/learn/linux/permissions-and-security/changing-ownership-chown/`
+
+### Page 28: Changing Ownership
+- **Topic ID**: `perms-chown`
+- **Page Title**: `👑 Changing Ownership (chown)`
+- **URL**: `/learn/linux/permissions-and-security/changing-ownership-chown/`
+- **Previous**: `/learn/linux/permissions-and-security/changing-file-permissions-chmod/`
+- **Next**: `/learn/linux/permissions-and-security/sudo-for-administrative-tasks/`
+
+### Page 29: Using sudo
+- **Topic ID**: `perms-sudo`
+- **Page Title**: `🛡️ Using sudo for Administrative Tasks`
+- **URL**: `/learn/linux/permissions-and-security/sudo-for-administrative-tasks/`
+- **Previous**: `/learn/linux/permissions-and-security/changing-ownership-chown/`
+- **Next**: `/learn/linux/permissions-and-security/managing-access-control-lists-acls/`
+
+### Page 30: Access Control Lists
+- **Topic ID**: `perms-acl`
+- **Page Title**: `📜 Managing Access Control Lists (ACLs)`
+- **URL**: `/learn/linux/permissions-and-security/managing-access-control-lists-acls/`
+- **Previous**: `/learn/linux/permissions-and-security/sudo-for-administrative-tasks/`
+- **Next**: `/learn/linux/package-management/what-are-packages-and-repositories/`
+
+---
+
+## 📦 MAIN TOPIC 7: Package Management (4 pages)
+
+### Page 31: Packages & Repositories
+- **Topic ID**: `packages-intro`
+- **Page Title**: `📦 What are Packages and Repositories?`
+- **URL**: `/learn/linux/package-management/what-are-packages-and-repositories/`
+- **Previous**: `/learn/linux/permissions-and-security/managing-access-control-lists-acls/`
+- **Next**: `/learn/linux/package-management/installing-and-removing-packages/`
+
+### Page 32: Installing & Removing
+- **Topic ID**: `packages-installing`
+- **Page Title**: `⬇️ Installing and Removing Packages`
+- **URL**: `/learn/linux/package-management/installing-and-removing-packages/`
+- **Previous**: `/learn/linux/package-management/what-are-packages-and-repositories/`
+- **Next**: `/learn/linux/package-management/updating-the-system/`
+
+### Page 33: Updating System
+- **Topic ID**: `packages-updating`
+- **Page Title**: `🔄 Updating the System`
+- **URL**: `/learn/linux/package-management/updating-the-system/`
+- **Previous**: `/learn/linux/package-management/installing-and-removing-packages/`
+- **Next**: `/learn/linux/package-management/searching-for-packages/`
+
+### Page 34: Searching Packages
+- **Topic ID**: `packages-searching`
+- **Page Title**: `🔍 Searching for Packages`
+- **URL**: `/learn/linux/package-management/searching-for-packages/`
+- **Previous**: `/learn/linux/package-management/updating-the-system/`
+- **Next**: `/learn/linux/process-management/viewing-running-processes/`
+
+---
+
+## 🧠 MAIN TOPIC 8: Process Management (4 pages)
+
+### Page 35: Viewing Processes
+- **Topic ID**: `process-viewing`
+- **Page Title**: `👁️ Viewing Running Processes`
+- **URL**: `/learn/linux/process-management/viewing-running-processes/`
+- **Previous**: `/learn/linux/package-management/searching-for-packages/`
+- **Next**: `/learn/linux/process-management/killing-or-stopping-processes/`
+
+### Page 36: Killing Processes
+- **Topic ID**: `process-killing`
+- **Page Title**: `❌ Killing or Stopping Processes`
+- **URL**: `/learn/linux/process-management/killing-or-stopping-processes/`
+- **Previous**: `/learn/linux/process-management/viewing-running-processes/`
+- **Next**: `/learn/linux/process-management/managing-background-foreground-jobs/`
+
+### Page 37: Background Jobs
+- **Topic ID**: `process-jobs`
+- **Page Title**: `🔄 Managing Background/Foreground Jobs`
+- **URL**: `/learn/linux/process-management/managing-background-foreground-jobs/`
+- **Previous**: `/learn/linux/process-management/killing-or-stopping-processes/`
+- **Next**: `/learn/linux/process-management/scheduling-tasks/`
+
+### Page 38: Scheduling Tasks
+- **Topic ID**: `process-scheduling`
+- **Page Title**: `⏰ Scheduling Tasks (cron)`
+- **URL**: `/learn/linux/process-management/scheduling-tasks/`
+- **Previous**: `/learn/linux/process-management/managing-background-foreground-jobs/`
+- **Next**: `/learn/linux/networking-basics/checking-ip-address/`
+
+---
+
+## 🌐 MAIN TOPIC 9: Networking Basics (5 pages)
+
+### Page 39: Checking IP Address
+- **Topic ID**: `network-ip`
+- **Page Title**: `🌐 Checking IP Address`
+- **URL**: `/learn/linux/networking-basics/checking-ip-address/`
+- **Previous**: `/learn/linux/process-management/scheduling-tasks/`
+- **Next**: `/learn/linux/networking-basics/testing-connectivity/`
+
+### Page 40: Testing Connectivity
+- **Topic ID**: `network-connectivity`
+- **Page Title**: `📡 Testing Connectivity (ping, traceroute)`
+- **URL**: `/learn/linux/networking-basics/testing-connectivity/`
+- **Previous**: `/learn/linux/networking-basics/checking-ip-address/`
+- **Next**: `/learn/linux/networking-basics/downloading-files/`
+
+### Page 41: Downloading Files
+- **Topic ID**: `network-downloading`
+- **Page Title**: `⬇️ Downloading Files (wget, curl)`
+- **URL**: `/learn/linux/networking-basics/downloading-files/`
+- **Previous**: `/learn/linux/networking-basics/testing-connectivity/`
+- **Next**: `/learn/linux/networking-basics/viewing-network-statistics/`
+
+### Page 42: Network Statistics
+- **Topic ID**: `network-stats`
+- **Page Title**: `📊 Viewing Network Statistics`
+- **URL**: `/learn/linux/networking-basics/viewing-network-statistics/`
+- **Previous**: `/learn/linux/networking-basics/downloading-files/`
+- **Next**: `/learn/linux/networking-basics/editing-network-configuration-files/`
+
+### Page 43: Network Configuration
+- **Topic ID**: `network-config`
+- **Page Title**: `⚙️ Editing Network Configuration Files`
+- **URL**: `/learn/linux/networking-basics/editing-network-configuration-files/`
+- **Previous**: `/learn/linux/networking-basics/viewing-network-statistics/`
+- **Next**: `/learn/linux/system-monitoring-and-logs/checking-system-performance/`
+
+---
+
+## 🧰 MAIN TOPIC 10: System Monitoring (4 pages)
+
+### Page 44: System Performance
+- **Topic ID**: `monitor-performance`
+- **Page Title**: `📈 Checking System Performance`
+- **URL**: `/learn/linux/system-monitoring-and-logs/checking-system-performance/`
+- **Previous**: `/learn/linux/networking-basics/editing-network-configuration-files/`
+- **Next**: `/learn/linux/system-monitoring-and-logs/viewing-logs/`
+
+### Page 45: Viewing Logs
+- **Topic ID**: `monitor-logs`
+- **Page Title**: `📋 Viewing Logs`
+- **URL**: `/learn/linux/system-monitoring-and-logs/viewing-logs/`
+- **Previous**: `/learn/linux/system-monitoring-and-logs/checking-system-performance/`
+- **Next**: `/learn/linux/system-monitoring-and-logs/monitoring-disk-i-o-and-memory-usage/`
+
+### Page 46: Disk I/O
+- **Topic ID**: `monitor-disk-io`
+- **Page Title**: `💾 Monitoring Disk I/O and Memory Usage`
+- **URL**: `/learn/linux/system-monitoring-and-logs/monitoring-disk-i-o-and-memory-usage/`
+- **Previous**: `/learn/linux/system-monitoring-and-logs/viewing-logs/`
+- **Next**: `/learn/linux/system-monitoring-and-logs/checking-running-services/`
+
+### Page 47: Running Services
+- **Topic ID**: `monitor-services`
+- **Page Title**: `⚙️ Checking Running Services`
+- **URL**: `/learn/linux/system-monitoring-and-logs/checking-running-services/`
+- **Previous**: `/learn/linux/system-monitoring-and-logs/monitoring-disk-i-o-and-memory-usage/`
+- **Next**: `/learn/linux/services-and-systemd/understanding-systemd-and-init/`
+
+---
+
+## 🪟 MAIN TOPIC 11: Services & Systemd (4 pages)
+
+### Page 48: Understanding Systemd
+- **Topic ID**: `systemd-intro`
+- **Page Title**: `🔧 Understanding Systemd and Init`
+- **URL**: `/learn/linux/services-and-systemd/understanding-systemd-and-init/`
+- **Previous**: `/learn/linux/system-monitoring-and-logs/checking-running-services/`
+- **Next**: `/learn/linux/services-and-systemd/starting-stopping-services/`
+
+### Page 49: Starting/Stopping Services
+- **Topic ID**: `systemd-starting`
+- **Page Title**: `▶️ Starting, Stopping Services`
+- **URL**: `/learn/linux/services-and-systemd/starting-stopping-services/`
+- **Previous**: `/learn/linux/services-and-systemd/understanding-systemd-and-init/`
+- **Next**: `/learn/linux/services-and-systemd/enabling-disabling-services-on-boot/`
+
+### Page 50: Enabling on Boot
+- **Topic ID**: `systemd-enabling`
+- **Page Title**: `🚀 Enabling/Disabling Services on Boot`
+- **URL**: `/learn/linux/services-and-systemd/enabling-disabling-services-on-boot/`
+- **Previous**: `/learn/linux/services-and-systemd/starting-stopping-services/`
+- **Next**: `/learn/linux/services-and-systemd/viewing-service-status-and-logs/`
+
+### Page 51: Service Status
+- **Topic ID**: `systemd-status`
+- **Page Title**: `📊 Viewing Service Status and Logs`
+- **URL**: `/learn/linux/services-and-systemd/viewing-service-status-and-logs/`
+- **Previous**: `/learn/linux/services-and-systemd/enabling-disabling-services-on-boot/`
+- **Next**: `/learn/linux/file-compression-and-archiving/compressing-and-decompressing-files/`
+
+---
+
+## 🧱 MAIN TOPIC 12: File Compression (2 pages)
+
+### Page 52: Compressing Files
+- **Topic ID**: `compress-gzip`
+- **Page Title**: `🗜️ Compressing and Decompressing Files`
+- **URL**: `/learn/linux/file-compression-and-archiving/compressing-and-decompressing-files/`
+- **Previous**: `/learn/linux/services-and-systemd/viewing-service-status-and-logs/`
+- **Next**: `/learn/linux/file-compression-and-archiving/creating-archives/`
+
+### Page 53: Creating Archives
+- **Topic ID**: `compress-tar`
+- **Page Title**: `📦 Creating Archives (tar)`
+- **URL**: `/learn/linux/file-compression-and-archiving/creating-archives/`
+- **Previous**: `/learn/linux/file-compression-and-archiving/compressing-and-decompressing-files/`
+- **Next**: `/learn/linux/networking-remote-access/using-ssh/`
+
+---
+
+## 🔗 MAIN TOPIC 13: Remote Access (4 pages)
+
+### Page 54: Using SSH
+- **Topic ID**: `remote-ssh`
+- **Page Title**: `🔐 Using SSH`
+- **URL**: `/learn/linux/networking-remote-access/using-ssh/`
+- **Previous**: `/learn/linux/file-compression-and-archiving/creating-archives/`
+- **Next**: `/learn/linux/networking-remote-access/setting-up-ssh-keys/`
+
+### Page 55: SSH Keys
+- **Topic ID**: `remote-keys`
+- **Page Title**: `🔑 Setting Up SSH Keys`
+- **URL**: `/learn/linux/networking-remote-access/setting-up-ssh-keys/`
+- **Previous**: `/learn/linux/networking-remote-access/using-ssh/`
+- **Next**: `/learn/linux/networking-remote-access/transferring-files-between-systems/`
+
+### Page 56: Transferring Files
+- **Topic ID**: `remote-transfer`
+- **Page Title**: `📁 Transferring Files Between Systems`
+- **URL**: `/learn/linux/networking-remote-access/transferring-files-between-systems/`
+- **Previous**: `/learn/linux/networking-remote-access/setting-up-ssh-keys/`
+- **Next**: `/learn/linux/networking-remote-access/remote-login-and-command-execution/`
+
+### Page 57: Remote Login
+- **Topic ID**: `remote-login`
+- **Page Title**: `💻 Remote Login and Command Execution`
+- **URL**: `/learn/linux/networking-remote-access/remote-login-and-command-execution/`
+- **Previous**: `/learn/linux/networking-remote-access/transferring-files-between-systems/`
+- **Next**: `/learn/linux/advanced-beginner-topics/environment-variables/`
+
+---
+
+## 🏁 MAIN TOPIC 14: Advanced Topics (5 pages)
+
+### Page 58: Environment Variables
+- **Topic ID**: `advanced-env`
+- **Page Title**: `🌍 Environment Variables`
+- **URL**: `/learn/linux/advanced-beginner-topics/environment-variables/`
+- **Previous**: `/learn/linux/networking-remote-access/remote-login-and-command-execution/`
+- **Next**: `/learn/linux/advanced-beginner-topics/aliases-and-custom-commands/`
+
+### Page 59: Aliases
+- **Topic ID**: `advanced-aliases`
+- **Page Title**: `⚡ Aliases and Custom Commands`
+- **URL**: `/learn/linux/advanced-beginner-topics/aliases-and-custom-commands/`
+- **Previous**: `/learn/linux/advanced-beginner-topics/environment-variables/`
+- **Next**: `/learn/linux/advanced-beginner-topics/bash-configuration-files/`
+
+### Page 60: Bash Configuration
+- **Topic ID**: `advanced-bashrc`
+- **Page Title**: `⚙️ Bash Configuration Files (.bashrc)`
+- **URL**: `/learn/linux/advanced-beginner-topics/bash-configuration-files/`
+- **Previous**: `/learn/linux/advanced-beginner-topics/aliases-and-custom-commands/`
+- **Next**: `/learn/linux/advanced-beginner-topics/understanding-file-descriptors-and-streams/`
+
+### Page 61: File Descriptors
+- **Topic ID**: `advanced-streams`
+- **Page Title**: `🔀 Understanding File Descriptors and Streams`
+- **URL**: `/learn/linux/advanced-beginner-topics/understanding-file-descriptors-and-streams/`
+- **Previous**: `/learn/linux/advanced-beginner-topics/bash-configuration-files/`
+- **Next**: `/learn/linux/advanced-beginner-topics/basic-firewall-setup/`
+
+### Page 62: Firewall Setup
+- **Topic ID**: `advanced-firewall`
+- **Page Title**: `🛡️ Basic Firewall Setup (ufw)`
+- **URL**: `/learn/linux/advanced-beginner-topics/basic-firewall-setup/`
+- **Previous**: `/learn/linux/advanced-beginner-topics/understanding-file-descriptors-and-streams/`
+- **Next**: `#` (disabled - last page)
+
+---
+
+## 🎯 Quick Reference Template
+
+For **Page 2: History of Linux**, add at the end:
+
+```html
+<!-- MARK AS DONE BUTTON -->
+<button class="mark-done-btn" id="mark-done-btn" data-topic-id="intro-history">
+    Mark as Finished
+</button>
+
+<!-- PREV/NEXT NAVIGATION -->
+<div class="page-navigation">
+    <a href="https://deepcyber-x86.io/learn/linux/introduction-to-linux/what-is-linux/" class="nav-link">← Previous: What is Linux?</a>
+    <a href="https://deepcyber-x86.io/learn/linux/introduction-to-linux/linux-distributions/" class="nav-link">Next: Linux Distributions →</a>
+</div>
+```
+
+EOF
+
+echo "✅ Topic reference guide created: topic_reference.md"
