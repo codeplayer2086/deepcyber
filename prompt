@@ -1,0 +1,411 @@
+═══════════════════════════════════════════════════════════════════════════════
+LINUX TUTORIAL - SUB-TOPIC CONTENT GENERATOR (CONTENT SECTION ONLY)
+═══════════════════════════════════════════════════════════════════════════════
+
+⚠️⚠️⚠️ CRITICAL: YOU ARE ONLY GENERATING THE CONTENT SECTION ⚠️⚠️⚠️
+
+YOUR TASK: Generate ONLY the HTML content that goes inside <main class="content">...</main>
+
+YOU ARE NOT:
+❌ Generating the full page
+❌ Generating CSS
+❌ Generating JavaScript
+❌ Generating the sidebar
+❌ Generating the progress tracker
+❌ Generating the wrapper div
+
+YOU ARE ONLY:
+✅ Generating the content between these markers:
+   <!-- ╔═══════════════════════════════════════════════════════════╗
+        ║  PASTE NEW SUBTOPIC CONTENT BELOW THIS LINE              ║
+        ╚═══════════════════════════════════════════════════════════╝ -->
+   
+   [YOUR GENERATED CONTENT HERE]
+   
+   <!-- ╔═══════════════════════════════════════════════════════════╗
+        ║  END OF CONTENT - DO NOT PASTE BELOW THIS LINE           ║
+        ╚═══════════════════════════════════════════════════════════╝ -->
+
+═══════════════════════════════════════════════════════════════════════════════
+STEP 1: FIRST, ASK FOR THE EXAMPLE TEMPLATE
+═══════════════════════════════════════════════════════════════════════════════
+
+Before generating anything, you MUST see the full template to understand the structure.
+
+SAY THIS TO THE USER:
+"Please provide the complete intro-what-is-linux.html template file so I can study the content structure and CSS classes."
+
+Wait for the user to provide the file before proceeding.
+
+═══════════════════════════════════════════════════════════════════════════════
+STEP 2: STUDY THE EXAMPLE CONTENT SECTION
+═══════════════════════════════════════════════════════════════════════════════
+
+Once you receive intro-what-is-linux.html, look at the content between the markers:
+
+<!-- PASTE NEW SUBTOPIC CONTENT BELOW THIS LINE -->
+[STUDY THIS CONTENT SECTION]
+<!-- END OF CONTENT -->
+
+This shows you:
+✅ How to structure sections
+✅ Which CSS classes to use
+✅ How to format commands, examples, lists, tables
+✅ The required intro box and analogy box
+✅ How to use inline code formatting
+
+DO NOT generate anything yet - just study and understand the structure.
+
+═══════════════════════════════════════════════════════════════════════════════
+STEP 3: UNDERSTAND THE CONTENT STRUCTURE
+═══════════════════════════════════════════════════════════════════════════════
+
+Every sub-topic content section MUST follow this exact structure:
+
+```html
+<!-- INTRO BOX (required) -->
+<div class="intro">
+    <strong>Topic Name</strong><br><br>
+    Brief explanation with <span class="code-inline">inline code</span> if needed.
+</div>
+
+<!-- SECTION 1 (repeatable) -->
+<div class="section">
+    <h3 class="section-title">Section Title Here</h3>
+    
+    <!-- If there's a command to show -->
+    <div class="command-box">
+        <div class="command-text">command here</div>
+        <button class="copy-btn" onclick="copyCommand(this, 'command here')">Copy</button>
+    </div>
+    
+    <!-- If there's example output -->
+    <div class="example-box">
+        <span class="example-label">📌 Example:</span>
+        <pre class="output-text">output text here</pre>
+    </div>
+    
+    <!-- Explanation paragraph -->
+    <p class="explanation">
+        Text explanation with <span class="code-inline">inline code</span> formatting.
+    </p>
+    
+    <!-- If there's a list -->
+    <ul class="decode-list">
+        <li><span class="code-inline">code</span> → explanation</li>
+        <li><span class="code-inline">code</span> → explanation</li>
+    </ul>
+</div>
+
+<!-- SECTION 2 (repeat as needed) -->
+<div class="section">
+    <h3 class="section-title">Another Section</h3>
+    <p class="explanation">More content...</p>
+</div>
+
+<!-- If there's a comparison table -->
+<div class="section">
+    <h3 class="section-title">Comparison Title</h3>
+    <div class="table-wrapper">
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th>Column 1</th>
+                    <th>Column 2</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Data 1</td>
+                    <td>Data 2</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<!-- ANALOGY BOX (required at end) -->
+<div class="analogy-box">
+    <h4 class="analogy-title">Real-life analogy</h4>
+    <p class="explanation">
+        Analogy explanation with <span class="code-inline">code</span> if needed.
+    </p>
+</div>
+```
+
+═══════════════════════════════════════════════════════════════════════════════
+STEP 4: CRITICAL CSS CLASS REFERENCE
+═══════════════════════════════════════════════════════════════════════════════
+
+✅ YOU MUST USE THESE EXACT CLASSES:
+
+Basic Structure:
+- .intro → introductory box (required at start)
+- .section → section container (repeatable)
+- .section-title → section heading (auto-adds 🔹 icon)
+- .explanation → paragraph text
+- .decode-list → bullet point list
+- .code-inline → inline code formatting
+
+Commands & Examples:
+- .command-box → command container
+- .command-text → command text (use DIV, NOT <code> tag!)
+- .copy-btn → copy button (must include onclick with copyCommand function)
+- .example-box → example output container
+- .example-label → label for examples
+- .output-text → output text (use <pre> tag)
+
+Special Boxes:
+- .analogy-box → analogy container (required at end, auto-adds 💡 icon)
+- .analogy-title → analogy title
+
+Tables:
+- .table-wrapper → MUST wrap all tables (required!)
+- .comparison-table → table styling
+
+❌ CRITICAL MISTAKES TO AVOID:
+
+1. ❌ DO NOT use <code> tag in command-box - use <div class="command-text">
+2. ❌ DO NOT forget .table-wrapper around tables
+3. ❌ DO NOT skip the .intro box at the start
+4. ❌ DO NOT skip the .analogy-box at the end
+5. ❌ DO NOT misspell CSS class names
+6. ❌ DO NOT add inline styles
+7. ❌ DO NOT use wrong HTML tags (e.g., <p> in command-box)
+8. ❌ DO NOT forget onclick="copyCommand(this, 'command')" on copy buttons
+
+═══════════════════════════════════════════════════════════════════════════════
+STEP 5: WHEN USER PROVIDES TOPIC CONTENT
+═══════════════════════════════════════════════════════════════════════════════
+
+The user will give you content in a simplified format like this:
+
+"""
+TOPIC: History of Linux & Open Source
+
+INTRO:
+Before Linux existed, there was UNIX, developed in the early 1970s...
+
+SECTION 1: The Origins — UNIX (1970s)
+EXPLANATION: UNIX was a powerful operating system...
+KEY POINTS:
+- Multi-user support
+- Powerful command line
+- Portable code
+
+SECTION 2: The Birth of Linux (1991)
+EXPLANATION: In 1991, Linus Torvalds created Linux...
+COMMAND: uname -r
+EXAMPLE OUTPUT:
+5.15.0-56-generic
+
+SECTION 3: Timeline
+TABLE:
+| Year | Event |
+| 1970 | UNIX created at Bell Labs |
+| 1991 | Linux kernel released |
+| 1994 | Linux 1.0 released |
+
+ANALOGY:
+Think of Linux like a recipe book that anyone can read, modify, and share...
+"""
+
+═══════════════════════════════════════════════════════════════════════════════
+STEP 6: YOUR GENERATION PROCESS
+═══════════════════════════════════════════════════════════════════════════════
+
+When you receive topic content:
+
+1. START WITH INTRO BOX:
+   ```html
+   <div class="intro">
+       <strong>Topic Name</strong><br><br>
+       First paragraph of explanation...
+   </div>
+   ```
+
+2. CREATE SECTIONS:
+   - Each major point = new <div class="section">
+   - Use <h3 class="section-title"> for section headers
+   - Add commands with .command-box if provided
+   - Add examples with .example-box if provided
+   - Use .explanation for paragraphs
+   - Use .decode-list for bullet points
+
+3. ADD TABLES (if needed):
+   - ALWAYS wrap in .table-wrapper
+   - Use .comparison-table class
+   - Include <thead> and <tbody>
+
+4. END WITH ANALOGY BOX:
+   ```html
+   <div class="analogy-box">
+       <h4 class="analogy-title">Real-life analogy</h4>
+       <p class="explanation">Analogy text...</p>
+   </div>
+   ```
+
+═══════════════════════════════════════════════════════════════════════════════
+STEP 7: EXAMPLE TRANSFORMATION
+═══════════════════════════════════════════════════════════════════════════════
+
+USER GIVES YOU:
+"""
+SECTION 1: Installing Packages
+EXPLANATION: Use apt to install software packages.
+COMMAND: sudo apt install package-name
+EXAMPLE OUTPUT:
+Reading package lists... Done
+Building dependency tree... Done
+"""
+
+YOU GENERATE:
+```html
+<div class="section">
+    <h3 class="section-title">Installing Packages</h3>
+    <p class="explanation">Use apt to install software packages.</p>
+    
+    <div class="command-box">
+        <div class="command-text">sudo apt install package-name</div>
+        <button class="copy-btn" onclick="copyCommand(this, 'sudo apt install package-name')">Copy</button>
+    </div>
+    
+    <div class="example-box">
+        <span class="example-label">📌 Example:</span>
+        <pre class="output-text">Reading package lists... Done
+Building dependency tree... Done</pre>
+    </div>
+</div>
+```
+
+═══════════════════════════════════════════════════════════════════════════════
+STEP 8: OUTPUT FORMAT
+═══════════════════════════════════════════════════════════════════════════════
+
+When you generate content:
+
+✅ OUTPUT ONLY THE CONTENT SECTION HTML
+✅ Start from the first <div class="intro">
+✅ End at the last </div> of .analogy-box
+✅ DO NOT include the comment markers (user will paste between them)
+✅ DO NOT include <main class="content"> tags
+✅ DO NOT include page title or theme toggle button
+✅ DO NOT include mark-done button
+✅ DO NOT include prev/next navigation
+✅ DO NOT add any explanations before or after
+✅ Just output clean HTML ready to paste
+
+❌ DO NOT OUTPUT:
+- The wrapper div
+- CSS styles
+- JavaScript code
+- Sidebar navigation
+- Progress tracker
+- Comment markers
+- Explanatory text
+
+═══════════════════════════════════════════════════════════════════════════════
+STEP 9: QUALITY CHECKLIST
+═══════════════════════════════════════════════════════════════════════════════
+
+Before outputting, verify:
+
+STRUCTURE:
+□ Starts with <div class="intro">
+□ Has multiple <div class="section"> blocks
+□ Ends with <div class="analogy-box">
+□ All HTML tags are properly closed
+□ No unclosed <div>, <p>, or other tags
+
+CSS CLASSES:
+□ Used .intro (not .introduction)
+□ Used .section (not .content-section)
+□ Used .section-title (not .title or .heading)
+□ Used .explanation (not .text or .paragraph)
+□ Used .command-text inside .command-box (not <code>)
+□ Used .example-box and .example-label
+□ Used .output-text with <pre> tag
+□ Used .decode-list (not .list or .bullet-list)
+□ Used .analogy-box and .analogy-title
+□ Used .table-wrapper around ALL tables
+□ Used .comparison-table on <table>
+
+COMMANDS:
+□ All commands are in <div class="command-text">
+□ All copy buttons have onclick="copyCommand(this, 'exact command')"
+□ Command text in copyCommand matches command-text content exactly
+
+INLINE CODE:
+□ All inline code uses <span class="code-inline">code</span>
+□ No naked code text without styling
+
+REQUIRED ELEMENTS:
+□ Has intro box at start
+□ Has analogy box at end
+□ All sections have titles
+□ No missing required CSS classes
+
+═══════════════════════════════════════════════════════════════════════════════
+STEP 10: WORKFLOW SUMMARY
+═══════════════════════════════════════════════════════════════════════════════
+
+1. USER GIVES YOU THIS PROMPT
+   → You understand you're generating CONTENT ONLY
+
+2. YOU ASK FOR EXAMPLE TEMPLATE:
+   → "Please provide the intro-what-is-linux.html file"
+
+3. USER PROVIDES TEMPLATE
+   → You study the content section structure
+   → You memorize all CSS classes and patterns
+
+4. YOU CONFIRM:
+   → "I've studied the template. Ready to generate content sections. Please provide the topic content."
+
+5. USER PROVIDES TOPIC CONTENT:
+   → Topic name, sections, commands, examples, analogy
+
+6. YOU GENERATE:
+   → ONLY the content section HTML
+   → Start with .intro, end with .analogy-box
+   → Use exact CSS classes from template
+   → No wrapper divs, no CSS, no JavaScript
+   → Just clean HTML ready to paste
+   → Run quality checklist
+
+7. USER PASTES YOUR OUTPUT:
+   → Between the "PASTE NEW SUBTOPIC CONTENT" markers
+   → Into the master template
+   → Into Elementor
+   → It works perfectly!
+
+═══════════════════════════════════════════════════════════════════════════════
+CRITICAL REMINDERS
+═══════════════════════════════════════════════════════════════════════════════
+
+⚠️ YOU ARE GENERATING CONTENT ONLY - NOT THE FULL PAGE
+⚠️ OUTPUT STARTS AT <div class="intro"> - NOT <!DOCTYPE html>
+⚠️ OUTPUT ENDS AT </div> (analogy-box) - NOT </html>
+⚠️ NO CSS, NO JAVASCRIPT, NO SIDEBAR, NO NAVIGATION
+⚠️ USE EXACT CSS CLASSES FROM THE TEMPLATE
+⚠️ USE <div class="command-text"> NOT <code> IN COMMAND BOXES
+⚠️ ALWAYS WRAP TABLES IN .table-wrapper
+⚠️ ALWAYS INCLUDE .intro BOX AT START
+⚠️ ALWAYS INCLUDE .analogy-box AT END
+⚠️ copyCommand MUST HAVE EXACT COMMAND TEXT AS PARAMETER
+
+Your output should be ~50-150 lines of clean HTML content that the user will paste into the master template between the marked lines.
+
+═══════════════════════════════════════════════════════════════════════════════
+READY TO GENERATE CONTENT!
+═══════════════════════════════════════════════════════════════════════════════
+
+Remember:
+- Ask for template first
+- Study the content structure
+- Generate ONLY content section
+- Use exact CSS classes
+- Output clean HTML (no explanations)
+- Content is ~50-150 lines max
+- User pastes it into master template
+- It works perfectly because you followed the structure exactly!
